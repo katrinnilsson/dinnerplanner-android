@@ -1,0 +1,287 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="se.kth.csc.iprog.dinnerplanner.android.Activity2_MenuView"
+    android:id="@+id/activity2_menu_id" >>
+
+    <GridLayout
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/gridlayout"
+        android:columnCount="3"
+        android:rowCount="9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Participants"
+                android:id="@+id/textView"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/txtNumberOfGuests"
+                android:layout_weight="1" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Total Cost:  "
+                android:id="@+id/textView2"
+                android:layout_row="0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="0"
+                android:id="@+id/txtPrice" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text=" kr"
+                android:id="@+id/textView3" />
+
+
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Choose Menu"
+            android:id="@+id/textView5"
+            android:layout_below="@+id/example_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="left"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:textSize="30dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Starters"
+            android:layout_column="0"
+            android:layout_row="2"
+            />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView"
+            android:layout_column="0"
+            android:layout_row="3">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/Starter"
+                >
+
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left|center_vertical"
+                    android:layout_marginTop="12sp">
+                //Baked Brie
+                <ImageButton
+                    android:id="@+id/imgStarter1"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="60dp"
+                    android:contentDescription="Ingredients"
+                    />
+                <TextView
+                    android:id="@+id/txtStarter1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_image_side"
+                    android:layout_gravity="left"
+                    android:textSize="12sp"
+                    android:text="Baked Brie" />
+                </FrameLayout>
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    />
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left|center_vertical"
+                    android:layout_marginTop="12sp">
+                <ImageButton
+                    android:id="@+id/imgStarter2"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="60sp"
+                    android:contentDescription=""
+                    android:layout_gravity="center_horizontal"/>
+                <TextView
+                    android:id="@+id/txtStarter2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_image_side"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="12sp"
+                    android:text="Sourdough"
+                    />
+                </FrameLayout>
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    />
+
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left|center_vertical"
+                    android:layout_marginTop="12sp">
+                <ImageButton
+                    android:id="@+id/imgStarter3"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="60sp"
+                    android:contentDescription=""
+                    android:gravity="left"/>
+                <TextView
+                    android:id="@+id/txtStarter3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_image_side"
+                    android:gravity="left"
+                    android:textSize="12sp"
+                    android:text="Toast" />
+                </FrameLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Main Course"
+            android:layout_column="0"
+            android:layout_row="4"
+            />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView2"
+            android:layout_gravity="center_horizontal"
+            android:layout_column="0"
+            android:layout_row="5">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/MainCourse"
+                >
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left|center_vertical"
+                    android:layout_marginTop="12sp">
+            <ImageButton
+                android:id="@+id/imgMain1"
+                android:layout_width="@dimen/activity_image_side"
+                android:layout_height="60sp"
+                android:contentDescription=""/>
+            <TextView
+                android:id="@+id/txtMain2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_image_side"
+                android:gravity="left"
+                android:textSize="12sp"
+                android:text="Meatballs" />
+                </FrameLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Dessert"
+            android:layout_column="0"
+            android:layout_row="6"
+            />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView3"
+            android:layout_gravity="center_horizontal"
+            android:layout_column="0"
+            android:layout_row="7"
+            >
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/Dessert"
+                >
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left|center_vertical"
+                    android:layout_marginTop="12sp">
+                <ImageButton
+                    android:id="@+id/imgDessert1"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="60sp"
+                    android:contentDescription=""/>
+                <TextView
+                    android:id="@+id/txtDessert1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_image_side"
+                    android:gravity="left"
+                    android:textSize="12sp"
+                    android:text="Ice Cream" />
+                </FrameLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:id="@+id/button"
+            android:layout_column="0"
+            android:layout_row="8"
+            android:layout_gravity="center_horizontal" />
+
+    </GridLayout>
+</RelativeLayout>
