@@ -217,7 +217,7 @@
                 android:layout_height="60sp"
                 android:contentDescription=""/>
             <TextView
-                android:id="@+id/txtMain2"
+                android:id="@+id/txtMain1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_image_side"

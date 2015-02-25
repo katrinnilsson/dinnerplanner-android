@@ -1,40 +1,53 @@
 package se.kth.csc.iprog.dinnerplanner.android.view;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import se.kth.csc.iprog.dinnerplanner.android.DinnerPlannerApplication;
 import se.kth.csc.iprog.dinnerplanner.android.R;
+import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
+import se.kth.csc.iprog.dinnerplanner.model.Dish;
 
-public class DishPopupView extends Activity {
+public class DishPopupView extends RelativeLayout {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dish_popup);
+    Dish dish;
+    Context context;
+    DinnerModel model;
+
+    public DishPopupView (Context context, Dish longPressed, DinnerModel model){
+        super(context);
+
+        this.dish = longPressed;
+        this.context = context;
+        this.model = model;
+
+        // inflate the layout
+        LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater.inflate(R.layout.activity_dish_popup, this, true);
+
+        // set the longPressed dish caption
+        TextView dishCaption = (TextView) this.findViewById(R.id.dishName);
+        dishCaption.setText(String.valueOf(this.dish.getName()));
+
+        //img
+        ImageView img = (ImageView) this.findViewById(R.id.imgPopup);
+        img.setImageResource(DinnerPlannerApplication.getImageResId(context, this.dish.getImage()));
+
+        //cost per person
+        TextView dishPricePerPerson = (TextView) this.findViewById(R.id.txtCostPerPerson);
+        float price = dish.getPrice();
+        dishPricePerPerson.setText(String.valueOf(price));
+
+        //total cost
+        TextView ttlCost = (TextView) this.findViewById(R.id.txtCost);
+        float totalCost = model.getNumberOfGuests() * price;
+        ttlCost.setText(String.valueOf(totalCost));
+
+
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_dish_popup, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

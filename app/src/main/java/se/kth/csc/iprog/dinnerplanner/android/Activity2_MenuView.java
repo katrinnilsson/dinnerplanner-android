@@ -12,6 +12,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import se.kth.csc.iprog.dinnerplanner.android.view.MenuView;
+import se.kth.csc.iprog.dinnerplanner.android.view.MenuViewClickController;
+import se.kth.csc.iprog.dinnerplanner.android.view.MenuViewController;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 
@@ -31,6 +33,9 @@ public class Activity2_MenuView extends Activity {
         setContentView(R.layout.activity2_menu);
         model = ((DinnerPlannerApplication) this.getApplication()).getModel();
         mainView = new MenuView(findViewById(R.id.activity2_menu_id), model);
+
+        MenuViewClickController clickController = new MenuViewClickController(model, mainView);
+        MenuViewController menuController = new MenuViewController(model, mainView);
     }
 
     @Override

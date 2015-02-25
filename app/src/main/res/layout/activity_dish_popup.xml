@@ -20,7 +20,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
+        android:id="@+id/imgPopup"
         android:background="@drawable/toast"
         android:layout_above="@+id/btnChoose"
         android:layout_toLeftOf="@+id/dishName"
@@ -32,9 +32,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Cost: 80 kr"
         android:id="@+id/txtCost"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toRightOf="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView"
+        android:layout_alignTop="@+id/imgPopup"
+        android:layout_toRightOf="@+id/imgPopup"
+        android:layout_toEndOf="@+id/imgPopup"
         android:layout_marginLeft="26dp"
         android:layout_marginStart="26dp" />
 

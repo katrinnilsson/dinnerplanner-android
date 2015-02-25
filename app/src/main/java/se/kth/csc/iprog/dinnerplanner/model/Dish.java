@@ -50,7 +50,13 @@ public class Dish {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+    public float getPrice(){
+        float price = 0;
+        for(Ingredient ing: this.ingredients){
+            price += ing.getPrice();
+        }
+        return price;
+    }
 	public Set<Ingredient> getIngredients(){
 		return ingredients;
 	}
